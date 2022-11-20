@@ -5,14 +5,20 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/RaeedAsif/flare-go-test/routes"
+	"github.com/RaeedAsif/flare-go-test/storage"
 )
 
 func main() {
 	PORT := "8080"
 
-	//routers init
-	router := mux.NewRouter()
+	//Init routers
+	router := routes.Init()
+	log.Println("routers intiliased")
+
+	//Init Database
+	storage.Init()
+	log.Println("storage intiliased")
 
 	//create http server
 	fmt.Println("listening http server start on " + string(PORT))
