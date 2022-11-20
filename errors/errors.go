@@ -1,5 +1,5 @@
 package errors
 
 var (
-	NOUSER = "no_user_found"
+	ERR_NO_USER = "no_user_found"
 )

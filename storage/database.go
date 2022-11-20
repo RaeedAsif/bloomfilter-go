@@ -15,12 +15,13 @@ var (
 
 func Init() {
 	users = make([]models.User, 0)
+	log.Println("fetching users from https://dummyjson.com/users")
 
 	//popualting dataset to users
 	SKIP := 0
 	total := LoadDataset(SKIP)
 
-	log.Println(fmt.Sprintf("added %d users to storage", total))
+	log.Println(fmt.Sprintf("fetched and added %d users to storage", total))
 }
 
 func SetUser(user models.User) error {
@@ -35,5 +36,5 @@ func GetUser(username string) (*models.User, error) {
 		}
 	}
 
-	return nil, fmt.Errorf(errors.NOUSER)
+	return nil, fmt.Errorf(errors.ERR_NO_USER)
 }

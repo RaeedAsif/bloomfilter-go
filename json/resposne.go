@@ -28,3 +28,7 @@ func Error(w http.ResponseWriter, err error) {
 	response := ResponseError{Status: http.StatusInternalServerError, Message: "error", Error: err.Error()}
 	json.NewEncoder(w).Encode(response)
 }
+
+func Health(w http.ResponseWriter) {
+	json.NewEncoder(w).Encode(map[string]string{"server_health": "good"})
+}

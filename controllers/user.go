@@ -9,8 +9,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var NOPARAM = "no_param_username"
-
 func GetUser() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
