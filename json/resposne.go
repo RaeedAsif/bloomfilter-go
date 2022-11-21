@@ -6,10 +6,21 @@ import (
 )
 
 // ResponseSuccess for success message response
+// swagger:response SuccessResponse
 type ResponseSuccess struct {
-	Status  int         `json:"status"`  // status code
-	Message string      `json:"message"` // respone message
-	Data    interface{} `json:"data"`    // response data
+	//in: int
+	Status int `json:"status"` // status code
+	//in: string
+	Message string `json:"message"` // respone message
+	//in: string
+	Data interface{} `json:"data"` // response data
+}
+
+// ResponseSuccess for success message response
+// swagger:response SuccessResponseHealth
+type ResponseHealth struct {
+	//in: string
+	Health string `json:"health"`
 }
 
 // ResponseError for error message response
@@ -35,5 +46,5 @@ func Error(w http.ResponseWriter, err error) {
 
 // Health serves server health
 func Health(w http.ResponseWriter) {
-	json.NewEncoder(w).Encode(map[string]string{"server_health": "good"})
+	json.NewEncoder(w).Encode(ResponseHealth{Health: "good"})
 }

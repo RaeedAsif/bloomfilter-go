@@ -1,10 +1,15 @@
 package models
 
-// User struct
+// User
 type User struct {
-	ID        int    `json:"id"`        // unique id
-	FirstName string `json:"firstName"` // first name of user
-	LastName  string `json:"lastName"`  // last name of user
-	Email     string `json:"email"`     // email of user
-	Username  string `json:"username"`  // username of user
+	// id
+	ID int `json:"id"`
+	// firstName
+	FirstName string `json:"firstName"`
+	// lastName
+	LastName string `json:"lastName"`
+	// email
+	Email string `json:"email"`
+	// username
+	Username string `json:"username"`
 }

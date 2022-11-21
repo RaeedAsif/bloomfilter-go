@@ -8,5 +8,5 @@ import (
 
 // ServerHealthRoute serves health route
 func ServerHealthRoute(router *mux.Router) {
-	router.HandleFunc("/", controllers.GetServerHealth()).Methods("GET")
+	router.HandleFunc("/health", controllers.GetServerHealth()).Methods("GET")
 }

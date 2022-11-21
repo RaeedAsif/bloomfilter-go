@@ -9,7 +9,23 @@ import (
 	"github.com/RaeedAsif/flare-go-test/storage"
 )
 
+// swagger:route GET /user/username/{username} User GetUsernameExists
 // IsUsernameExists serves http.HandlerFunc for username avaibality
+//
+// parameters:
+//   + name: username
+//     in: path
+//     description: username of the user
+//     type: string
+//     required: true
+//
+// security:
+// - basic
+//
+// responses:
+//
+//	200: SuccessResponse
+
 func IsUsernameExists() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)

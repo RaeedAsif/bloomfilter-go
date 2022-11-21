@@ -1,0 +1,86 @@
+consumes:
+    - application/json
+definitions:
+    User:
+        type: object
+        title: User
+        description: "A user model represents storage struct"
+        required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - username
+        properties:
+            id:
+                description: the id for this user
+                type: integer
+                format: int64
+                minimum: 1
+            firstName:
+                description: the first name for this user
+                type: string
+            lastName:
+                description: the last name for this user
+                type: string
+            email:
+                description: the email for this user
+                type: string
+            username:
+                description: the username for this user
+                type: string
+host: localhost:8080
+info:
+    description: this is swagger doc for flare-go-test.
+    title: Flare Test API.
+    version: 1.0.0
+paths:
+    /health:
+        get:
+            description: GetServerHealth serves http.HandlerFunc for server health
+            operationId: GetServerHealth
+            responses:
+                "200":
+                    $ref: '#/responses/SuccessResponseHealth'
+            tags:
+                - Server
+    /user/username/{username}:
+        get:
+            description: IsUsernameExists serves http.HandlerFunc for username avaibality
+            operationId: GetUsernameExists
+            parameters:
+                - description: username of the user
+                  in: path
+                  name: username
+                  required: true
+                  type: string
+            responses:
+                "200":
+                    $ref: '#/responses/SuccessResponse'
+            tags:
+                - User
+produces:
+    - application/json
+responses:
+    SuccessResponse:
+        description: ResponseSuccess for success message response
+        headers:
+            data:
+                description: 'in: string'
+            message:
+                description: 'in: string'
+                type: string
+            status:
+                description: 'in: int'
+                format: int64
+                type: integer
+    SuccessResponseHealth:
+        description: ResponseSuccess for success message response
+        headers:
+            health:
+                description: 'in: string'
+                type: string
+schemes:
+    - http
+    - https
+swagger: "2.0"
