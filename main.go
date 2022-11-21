@@ -38,8 +38,7 @@ func main() {
 	log.Println("routers intiliased")
 
 	srv := &http.Server{
-		Addr: "0.0.0.0:" + PORT,
-		// Good practice to set timeouts to avoid Slowloris attacks.
+		Addr:         "0.0.0.0:" + PORT,
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
