@@ -16,7 +16,7 @@ type ResponseSuccess struct {
 	Data interface{} `json:"data"` // response data
 }
 
-// ResponseSuccess for success message response
+// ResponseSuccessHealth for success health response
 // swagger:response SuccessResponseHealth
 type ResponseHealth struct {
 	//in: string

@@ -75,7 +75,7 @@ responses:
                 format: int64
                 type: integer
     SuccessResponseHealth:
-        description: ResponseSuccess for success message response
+        description: ResponseSuccessHealth for success health response
         headers:
             health:
                 description: 'in: string'
