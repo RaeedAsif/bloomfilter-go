@@ -34,8 +34,8 @@ func Init() {
 	log.Println(fmt.Sprintf("fetched and added %d users to storage", total))
 }
 
-// SetUser sets in memory user db
-func SetUser(user models.User) error {
+// Post sets in memory user db
+func Post(user models.User) error {
 	bf := GetInstance()
 	bf.mu.Lock()
 
