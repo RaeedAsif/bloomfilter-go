@@ -79,6 +79,17 @@ func (bf *BloomFilter) get(item []byte) []uint64 {
 }
 
 // Returns bit size
+/*
+Legend:
+n: how many items you expect to have in your filter (e.g. 216,553)
+p: your acceptable false positive rate {0..1} (e.g. 0.01 → 1%)
+m: the number of bits needed in the bloom filter
+k: the number of hash functions we should apply
+
+Formulas:
+m = -n*ln(p) / (ln(2)^2) the number of bits
+k = m/n * ln(2) the number of hash functions
+*/
 func getBitSize() int {
 	return int((float64(len(DefaultHashFunctions)) * math.Pow(math.Ln2, 2)) / utils.Ln(FalsePositive))
 }
