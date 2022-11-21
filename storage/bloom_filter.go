@@ -10,13 +10,15 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
+// ref : https://codeburst.io/lets-implement-a-bloom-filter-in-go-b2da8a4b849f
+
 var (
 	bf            *BloomFilter
 	ExpectedUsers = 100000
 	FalsePositive = 0.1 // 10%
 )
 
-// BloomFilter
+// BloomFilter struct
 type BloomFilter struct {
 	bitset    []bool        // The bloom-filter bitset
 	m         uint          // Size of the bloom filter

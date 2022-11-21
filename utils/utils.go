@@ -8,6 +8,7 @@ func f(x, a float64) float64 {
 	return math.Exp(x) - a
 }
 
+// Ln to calculate natual log. ref :https://gist.github.com/thinkphp/ae5024dbd0ea6b83b6308a028ea22323
 func Ln(n float64) float64 {
 	var lo, hi, m float64
 

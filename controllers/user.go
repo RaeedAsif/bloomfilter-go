@@ -9,17 +9,14 @@ import (
 	"github.com/RaeedAsif/flare-go-test/storage"
 )
 
-func GetUser() http.HandlerFunc {
+// IsUsernameExists serves http.HandlerFunc for username avaibality
+func IsUsernameExists() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
 		username := params["username"]
 
-		user, err := storage.GetUser(username)
-		if err != nil {
-			json.Error(w, err)
-			return
-		}
+		isExists := storage.IsUsernameExists(username)
 
-		json.Success(w, user)
+		json.Success(w, isExists)
 	}
 }

@@ -12,15 +12,17 @@ import (
 
 // dataset:  https://dummyjson.com/users
 
+// Dataset struct
 type Dataset struct {
-	Users []models.User `json:"users"`
-	Limit int           `json:"limit"`
-	Skip  int           `json:"skip"`
-	Total int           `json:"total"`
+	Users []models.User `json:"users"` // list of users
+	Limit int           `json:"limit"` // api limit
+	Skip  int           `json:"skip"`  // api skip
+	Total int           `json:"total"` // total items in db
 }
 
 var LIMIT = 0
 
+// LoadDataset fetches and loads the api data to storage db
 func LoadDataset(skip int) int {
 	url := "https://dummyjson.com/users"
 

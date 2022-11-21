@@ -4,6 +4,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Init iniates NewRouter
 func Init() *mux.Router {
 	//router
 	router := mux.NewRouter()

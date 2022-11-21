@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/RaeedAsif/flare-go-test/errors"
 	"github.com/RaeedAsif/flare-go-test/models"
 )
 
@@ -13,6 +12,7 @@ var (
 	SKIP  = 0
 )
 
+// Init initiates storage db
 func Init() {
 	users = make([]models.User, 0)
 
@@ -33,25 +33,26 @@ func Init() {
 	log.Println(fmt.Sprintf("fetched and added %d users to storage", total))
 }
 
+// SetUser sets in memory user db
 func SetUser(user models.User) error {
 	users = append(users, user)
 	return nil
 }
 
-func GetUser(username string) (*models.User, error) {
+// IsUsernameExists checks if user exists in db
+func IsUsernameExists(username string) bool {
 
 	bf := GetInstance()
 
-	if !bf.Check(username) {
-		fmt.Println("HERE")
-		return nil, fmt.Errorf(errors.ERR_NO_USER)
+	if bf.Check(username) {
+		return true
 	}
 
 	for _, u := range users {
 		if username == u.Username {
-			return &u, nil
+			return true
 		}
 	}
 
-	return nil, fmt.Errorf(errors.ERR_NO_USER)
+	return false
 }
