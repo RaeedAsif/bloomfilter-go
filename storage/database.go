@@ -48,7 +48,6 @@ func Post(user models.User) error {
 
 // IsUsernameExists checks if user exists in db
 func IsUsernameExists(username string) bool {
-
 	bf := GetInstance()
 
 	if bf.Check(username) {
