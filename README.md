@@ -1,5 +1,5 @@
 # flare-go-test
-This is a implementation of microservice checking if user exists using a data structure Bloom Filter using Go Mux
+This is a implementation of microservice checking if user exists using a data structure Bloom Filter and Go Mux
 
 ## Preface
 This repository is the code repo of microservice to check the availability of a username using golang.
