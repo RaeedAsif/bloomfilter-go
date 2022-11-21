@@ -26,6 +26,7 @@ func Init() {
 	InitBloomFilter()
 	bf := GetInstance()
 
+	// set bitset
 	for _, u := range users {
 		bf.Set(u.Username)
 	}
@@ -35,7 +36,13 @@ func Init() {
 
 // SetUser sets in memory user db
 func SetUser(user models.User) error {
+	bf := GetInstance()
+	bf.mu.Lock()
+
 	users = append(users, user)
+
+	bf.mu.Unlock()
+
 	return nil
 }
 

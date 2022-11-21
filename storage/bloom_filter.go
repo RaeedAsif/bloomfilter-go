@@ -4,6 +4,7 @@ import (
 	"hash"
 	"hash/fnv"
 	"math"
+	"sync"
 
 	"github.com/RaeedAsif/flare-go-test/utils"
 
@@ -23,6 +24,7 @@ type BloomFilter struct {
 	bitset    []bool        // The bloom-filter bitset
 	m         uint          // Size of the bloom filter
 	hashfuncs []hash.Hash64 // The hash functions
+	mu        sync.Mutex
 }
 
 var DefaultHashFunctions = []hash.Hash64{murmur3.New64(), fnv.New64(), fnv.New64a()}
