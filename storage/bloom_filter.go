@@ -1,9 +1,11 @@
-package bloom
+package storage
 
 import (
 	"hash"
 	"hash/fnv"
 	"math"
+
+	"github.com/RaeedAsif/flare-go-test/utils"
 
 	"github.com/spaolacci/murmur3"
 )
@@ -24,7 +26,7 @@ type BloomFilter struct {
 var DefaultHashFunctions = []hash.Hash64{murmur3.New64(), fnv.New64(), fnv.New64a()}
 
 // Returns a new BloomFilter object
-func Init() {
+func InitBloomFilter() {
 	size := getBitSize()
 	bf = &BloomFilter{
 		bitset:    make([]bool, size),
@@ -74,39 +76,5 @@ func (bf *BloomFilter) get(item []byte) []uint64 {
 
 // Returns bit size
 func getBitSize() int {
-	return int((float64(len(DefaultHashFunctions)) * math.Pow(math.Ln2, 2)) / ln(FalsePositive))
-}
-
-// to calculate natural log
-func f(x, a float64) float64 {
-
-	return math.Exp(x) - a
-}
-
-func ln(n float64) float64 {
-	var lo, hi, m float64
-
-	if n <= 0 {
-		return -1
-	}
-
-	if n == 1 {
-		return 0
-	}
-
-	EPS := 0.00001
-	lo = 0
-	hi = n
-
-	for math.Abs(lo-hi) >= EPS {
-		m = float64((lo + hi) / 2.0)
-
-		if f(m, n) < 0 {
-			lo = m
-		} else {
-			hi = m
-		}
-	}
-
-	return float64((lo + hi) / 2.0)
+	return int((float64(len(DefaultHashFunctions)) * math.Pow(math.Ln2, 2)) / utils.Ln(FalsePositive))
 }

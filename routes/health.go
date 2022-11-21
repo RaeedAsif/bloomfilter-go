@@ -1,8 +1,9 @@
 package routes
 
 import (
-	"github.com/RaeedAsif/flare-go-test/controllers"
 	"github.com/gorilla/mux"
+
+	"github.com/RaeedAsif/flare-go-test/controllers"
 )
 
 func ServerHealthRoute(router *mux.Router) {

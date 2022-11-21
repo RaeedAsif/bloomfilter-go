@@ -3,10 +3,10 @@ package controllers
 import (
 	"net/http"
 
+	"github.com/gorilla/mux"
+
 	"github.com/RaeedAsif/flare-go-test/json"
 	"github.com/RaeedAsif/flare-go-test/storage"
-
-	"github.com/gorilla/mux"
 )
 
 func GetUser() http.HandlerFunc {

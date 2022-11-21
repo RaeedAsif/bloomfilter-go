@@ -6,7 +6,6 @@ import (
 
 	"github.com/RaeedAsif/flare-go-test/errors"
 	"github.com/RaeedAsif/flare-go-test/models"
-	"github.com/RaeedAsif/flare-go-test/utils/bloom"
 )
 
 var (
@@ -24,8 +23,8 @@ func Init() {
 	total := LoadDataset(SKIP)
 
 	// bloom filter init
-	bloom.Init()
-	bf := bloom.GetInstance()
+	InitBloomFilter()
+	bf := GetInstance()
 
 	for _, u := range users {
 		bf.Set(u.Username)
@@ -41,7 +40,7 @@ func SetUser(user models.User) error {
 
 func GetUser(username string) (*models.User, error) {
 
-	bf := bloom.GetInstance()
+	bf := GetInstance()
 
 	if !bf.Check(username) {
 		fmt.Println("HERE")
