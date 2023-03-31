@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/RaeedAsif/flare-go-test/models"
+	"github.com/RaeedAsif/bloomfilter-go/models"
 )
 
 // dataset:  https://dummyjson.com/users

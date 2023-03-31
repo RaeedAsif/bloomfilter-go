@@ -1,4 +1,4 @@
-# flare-go-test
+# bloomfilter-go
 This is a implementation of microservice checking if user exists using a data structure Bloom Filter and Go Mux
 
 ## Preface

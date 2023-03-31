@@ -11,8 +11,8 @@ import (
 
 	"github.com/joho/godotenv"
 
-	"github.com/RaeedAsif/flare-go-test/routes"
-	"github.com/RaeedAsif/flare-go-test/storage"
+	"github.com/RaeedAsif/bloomfilter-go/routes"
+	"github.com/RaeedAsif/bloomfilter-go/storage"
 )
 
 // ref: https://github.com/gorilla/mux

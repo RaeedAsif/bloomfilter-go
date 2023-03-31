@@ -31,8 +31,8 @@ definitions:
                 type: string
 host: localhost:8080
 info:
-    description: this is swagger doc for flare-go-test.
-    title: Flare Test API.
+    description: this is swagger doc for bloomfilter-go.
+    title: Bloomfilters Test API.
     version: 1.0.0
 paths:
     /health:

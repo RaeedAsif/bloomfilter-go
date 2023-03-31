@@ -1,6 +1,6 @@
-// Flare Test API.
+// Bloomfilter Test API.
 //
-// this is swagger doc for flare-go-test.
+// this is swagger doc for bloomfilter-go.
 //
 //	Schemes: http, https
 //	Host: localhost:8080

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/RaeedAsif/flare-go-test/models"
+	"github.com/RaeedAsif/bloomfilter-go/models"
 )
 
 var (

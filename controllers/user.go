@@ -5,8 +5,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/RaeedAsif/flare-go-test/json"
-	"github.com/RaeedAsif/flare-go-test/storage"
+	"github.com/RaeedAsif/bloomfilter-go/json"
+	"github.com/RaeedAsif/bloomfilter-go/storage"
 )
 
 // swagger:route GET /user/username/{username} User GetUsernameExists

@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/RaeedAsif/flare-go-test/controllers"
+	"github.com/RaeedAsif/bloomfilter-go/controllers"
 )
 
 // UserRoute serves user routes

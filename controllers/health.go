@@ -3,7 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/RaeedAsif/flare-go-test/json"
+	"github.com/RaeedAsif/bloomfilter-go/json"
 )
 
 // swagger:route GET /health Server GetServerHealth

@@ -1,4 +1,4 @@
-module github.com/RaeedAsif/flare-go-test
+module github.com/RaeedAsif/bloomfilter-go
 
 go 1.19
 

@@ -6,7 +6,7 @@ import (
 	"math"
 	"sync"
 
-	"github.com/RaeedAsif/flare-go-test/utils"
+	"github.com/RaeedAsif/bloomfilter-go/utils"
 
 	"github.com/spaolacci/murmur3"
 )
